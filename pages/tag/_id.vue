@@ -19,7 +19,8 @@
 export default {
     head(){
         return {
-            title: `Dev.To Tags For ${this.$route.params.id}`
+            title: `Dev.To Tags For ${this.$route.params.id}`,
+            meta:[{ name: 'description', content: `Results for ${this.$route.params.id}`, hid: 'post-desc'} ]
         }
     },
   async asyncData({ params }){    

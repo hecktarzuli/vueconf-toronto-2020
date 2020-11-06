@@ -17,6 +17,11 @@
 
 <script>
 export default {
+    head(){
+        return {
+            title: `Dev.To Tags For ${this.$route.params.id}`
+        }
+    },
   async asyncData({ params }){    
       
     const posts = await fetch(`https://dev.to/api/articles?tag=${params.id}&state=rising&per_page=10`).then(resp => resp.json())

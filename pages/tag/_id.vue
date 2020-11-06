@@ -17,8 +17,10 @@
 
 <script>
 export default {
-  async asyncData(){    
-    const posts = await fetch('https://dev.to/api/articles?tag=nuxt&state=rising&page=1').then(resp => resp.json())    
+  async asyncData({ params }){    
+      
+    const posts = await fetch(`https://dev.to/api/articles?tag=${params.id}&state=rising&per_page=10`).then(resp => resp.json())
+    //console.log(posts)
     return {
       posts,
     }
